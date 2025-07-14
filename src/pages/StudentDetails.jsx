@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, User, Mail, Phone, Calendar, BookOpen, Award, MapPin } from 'lucide-react';
-import { students } from '../data/mockData';
+import { mockData } from '../data/mockData';
 
 const StudentDetails = () => {
   const { id } = useParams();
-  const student = students.find(s => s.id === parseInt(id));
+  const student = mockData.students.find(s => s.id === parseInt(id));
 
   if (!student) {
     return (
