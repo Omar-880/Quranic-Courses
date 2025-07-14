@@ -135,62 +135,83 @@ const CourseDetails = () => {
               <CardContent className="space-y-6">
                 {/* الوصف */}
                 {course.description && (
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">وصف الدورة</h3>
-                    <p className="text-muted-foreground leading-relaxed">{course.description}</p>
+                  <div className="bg-gradient-to-r from-slate-50 to-blue-50 p-6 rounded-xl border-l-4 border-[#C6953E] shadow-sm">
+                    <h3 className="text-lg font-semibold mb-3 text-[#C6953E] flex items-center gap-2">
+                      <BookOpen className="h-5 w-5" />
+                      وصف الدورة
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed">{course.description}</p>
                   </div>
                 )}
 
                 {/* المعلومات الأساسية */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-xl border border-emerald-200 shadow-sm">
+                  <h3 className="text-lg font-semibold mb-4 text-[#C6953E] flex items-center gap-2">
+                    <Calendar className="h-5 w-5" />
+                    معلومات الدورة
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
                       <Calendar className="h-4 w-4 text-islamic-green" />
-                      <span className="text-muted-foreground">تاريخ البداية:</span>
-                      <span className="font-medium">{formatDate(course.startDate)}</span>
+                        <div>
+                          <span className="text-sm text-gray-500 block">تاريخ البداية</span>
+                          <span className="font-semibold text-gray-800">{formatDate(course.startDate)}</span>
+                        </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
                       <Calendar className="h-4 w-4 text-islamic-green" />
-                      <span className="text-muted-foreground">تاريخ الانتهاء:</span>
-                      <span className="font-medium">{formatDate(course.expectedEndDate)}</span>
+                        <div>
+                          <span className="text-sm text-gray-500 block">تاريخ الانتهاء</span>
+                          <span className="font-semibold text-gray-800">{formatDate(course.expectedEndDate)}</span>
+                        </div>
                     </div>
                     
                     {course.course_start_time && course.course_start_time !== "00:00:00" && (
-                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
                         <Clock className="h-4 w-4 text-islamic-green" />
-                        <span className="text-muted-foreground">وقت البداية:</span>
-                        <span className="font-medium">{course.course_start_time}</span>
+                          <div>
+                            <span className="text-sm text-gray-500 block">وقت البداية</span>
+                            <span className="font-semibold text-gray-800">{course.course_start_time}</span>
+                          </div>
                       </div>
                     )}
                   </div>
 
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
                       <User className="h-4 w-4 text-islamic-green" />
-                      <span className="text-muted-foreground">المعلم:</span>
-                      <Link 
-                        to={`/instructors/${instructor.id}`}
-                        className="font-medium text-islamic-gold hover:text-islamic-green"
-                      >
-                        {instructor.name || 'غير محدد'}
-                      </Link>
+                        <div>
+                          <span className="text-sm text-gray-500 block">المعلم</span>
+                          <Link 
+                            to={`/instructors/${instructor.id}`}
+                            className="font-semibold text-[#C6953E] hover:text-islamic-green transition-colors"
+                          >
+                            {instructor.name || 'غير محدد'}
+                          </Link>
+                        </div>
                     </div>
                     
-                    <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
                       <Users className="h-4 w-4 text-islamic-green" />
-                      <span className="text-muted-foreground">عدد الطلاب:</span>
-                      <span className="font-medium">{course.relatedStudents?.length || 0} طالب</span>
+                        <div>
+                          <span className="text-sm text-gray-500 block">عدد الطلاب</span>
+                          <span className="font-semibold text-gray-800">{course.relatedStudents?.length || 0} طالب</span>
+                        </div>
                     </div>
 
                     {course.level && (
-                      <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-3 p-3 bg-white rounded-lg shadow-sm">
                         <BookOpen className="h-4 w-4 text-islamic-green" />
-                        <span className="text-muted-foreground">المستوى:</span>
-                        <span className="font-medium">{course.level}</span>
+                          <div>
+                            <span className="text-sm text-gray-500 block">المستوى</span>
+                            <span className="font-semibold text-gray-800">{course.level}</span>
+                          </div>
                       </div>
                     )}
                   </div>
+                </div>
                 </div>
               </CardContent>
             </Card>

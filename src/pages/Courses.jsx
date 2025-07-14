@@ -115,13 +115,24 @@ const Courses = () => {
     <Layout>
       <div className="container mx-auto px-4 py-8">
         {/* عنوان الصفحة */}
-        <div className="bg-islamic-green text-center mb-12 py-16 -mx-4 px-4">
-          <h1 className="text-4xl font-bold text-islamic-gold mb-4 font-amiri">
+        <div className="bg-[#0e4d3c] text-center mb-12 py-20 -mx-4 px-4 relative overflow-hidden">
+          {/* Background pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-10 left-10 w-20 h-20 border border-white/20 rounded-full"></div>
+            <div className="absolute top-32 right-20 w-16 h-16 border border-white/20 rounded-full"></div>
+            <div className="absolute bottom-20 left-1/4 w-12 h-12 border border-white/20 rounded-full"></div>
+            <div className="absolute bottom-10 right-10 w-24 h-24 border border-white/20 rounded-full"></div>
+          </div>
+          
+          <div className="relative z-10">
+            <h1 className="text-5xl md:text-6xl font-bold text-[#C6953E] mb-6 font-amiri drop-shadow-lg">
             دورات القرآن الكريم
           </h1>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-[#C6953E] mx-auto mb-6 rounded-full"></div>
+            <p className="text-xl text-white/95 max-w-3xl mx-auto leading-relaxed">
             اختر من بين مجموعة متنوعة من دورات تحفيظ وتجويد القرآن الكريم المصممة لجميع الأعمار والمستويات
           </p>
+          </div>
         </div>
 
         {/* فلتر أنواع الدورات */}

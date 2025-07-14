@@ -143,36 +143,48 @@ const InstructorDetails = () => {
 
               <CardContent className="space-y-4">
                 {/* معلومات الاتصال */}
-                <div className="space-y-3">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-4 rounded-xl border border-blue-200 space-y-3">
+                  <h4 className="font-semibold text-[#C6953E] mb-3 flex items-center gap-2">
+                    <Phone className="h-4 w-4" />
+                    معلومات التواصل
+                  </h4>
                   {instructor.email && (
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3 p-2 bg-white rounded-lg">
                       <Mail className="h-4 w-4 text-islamic-green" />
-                      <span className="text-sm text-muted-foreground">البريد الإلكتروني:</span>
-                      <span className="text-sm font-medium break-all">{instructor.email}</span>
+                      <div className="flex-1">
+                        <span className="text-xs text-gray-500 block">البريد الإلكتروني</span>
+                        <span className="text-sm font-medium text-gray-800 break-all">{instructor.email}</span>
+                      </div>
                     </div>
                   )}
 
                   {instructor.phone_number && (
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3 p-2 bg-white rounded-lg">
                       <Phone className="h-4 w-4 text-islamic-green" />
-                      <span className="text-sm text-muted-foreground">الهاتف:</span>
-                      <span className="text-sm font-medium" dir="ltr">{instructor.phone_number}</span>
+                      <div className="flex-1">
+                        <span className="text-xs text-gray-500 block">الهاتف</span>
+                        <span className="text-sm font-medium text-gray-800" dir="ltr">{instructor.phone_number}</span>
+                      </div>
                     </div>
                   )}
 
                   {instructor.address && (
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3 p-2 bg-white rounded-lg">
                       <MapPin className="h-4 w-4 text-islamic-green" />
-                      <span className="text-sm text-muted-foreground">العنوان:</span>
-                      <span className="text-sm font-medium">{instructor.address}</span>
+                      <div className="flex-1">
+                        <span className="text-xs text-gray-500 block">العنوان</span>
+                        <span className="text-sm font-medium text-gray-800">{instructor.address}</span>
+                      </div>
                     </div>
                   )}
 
                   {age && (
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3 p-2 bg-white rounded-lg">
                       <Calendar className="h-4 w-4 text-islamic-green" />
-                      <span className="text-sm text-muted-foreground">العمر:</span>
-                      <span className="text-sm font-medium">{age} سنة</span>
+                      <div className="flex-1">
+                        <span className="text-xs text-gray-500 block">العمر</span>
+                        <span className="text-sm font-medium text-gray-800">{age} سنة</span>
+                      </div>
                     </div>
                   )}
                 </div>
@@ -191,32 +203,44 @@ const InstructorDetails = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {instructor.religious_qualifications && (
-                    <div className="p-4 bg-muted/30 rounded-lg">
-                      <h4 className="font-medium text-islamic-dark mb-2">المؤهل الديني</h4>
-                      <p className="text-muted-foreground">{instructor.religious_qualifications}</p>
+                    <div className="p-4 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border border-green-200 shadow-sm">
+                      <h4 className="font-semibold text-[#C6953E] mb-2 flex items-center gap-2">
+                        <GraduationCap className="h-4 w-4" />
+                        المؤهل الديني
+                      </h4>
+                      <p className="text-gray-700">{instructor.religious_qualifications}</p>
                     </div>
                   )}
 
                   {instructor.certificate && (
-                    <div className="p-4 bg-muted/30 rounded-lg">
-                      <h4 className="font-medium text-islamic-dark mb-2">الشهادة</h4>
-                      <p className="text-muted-foreground">{instructor.certificate}</p>
+                    <div className="p-4 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border border-blue-200 shadow-sm">
+                      <h4 className="font-semibold text-[#C6953E] mb-2 flex items-center gap-2">
+                        <Award className="h-4 w-4" />
+                        الشهادة
+                      </h4>
+                      <p className="text-gray-700">{instructor.certificate}</p>
                     </div>
                   )}
 
                   {instructor.quran_memorized_parts && (
-                    <div className="p-4 bg-muted/30 rounded-lg">
-                      <h4 className="font-medium text-islamic-dark mb-2">الأجزاء المحفوظة</h4>
-                      <p className="text-muted-foreground">{instructor.quran_memorized_parts} جزء من القرآن الكريم</p>
+                    <div className="p-4 bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl border border-amber-200 shadow-sm">
+                      <h4 className="font-semibold text-[#C6953E] mb-2 flex items-center gap-2">
+                        <BookOpen className="h-4 w-4" />
+                        الأجزاء المحفوظة
+                      </h4>
+                      <p className="text-gray-700">{instructor.quran_memorized_parts} جزء من القرآن الكريم</p>
                     </div>
                   )}
 
                   {instructor.quran_passed_parts && (
-                    <div className="p-4 bg-muted/30 rounded-lg">
-                      <h4 className="font-medium text-islamic-dark mb-2">الأجزاء المُجازة</h4>
-                      <p className="text-muted-foreground">{instructor.quran_passed_parts} جزء مُجاز فيها</p>
+                    <div className="p-4 bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl border border-purple-200 shadow-sm">
+                      <h4 className="font-semibold text-[#C6953E] mb-2 flex items-center gap-2">
+                        <Award className="h-4 w-4" />
+                        الأجزاء المُجازة
+                      </h4>
+                      <p className="text-gray-700">{instructor.quran_passed_parts} جزء مُجاز فيها</p>
                     </div>
                   )}
                 </div>
